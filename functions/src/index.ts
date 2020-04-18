@@ -23,10 +23,14 @@ export const webhook = https.onRequest((request, response) => {
             
             thanks`
 
-        }).then(() => {
+        }).then((sendingResponse) => {
+            console.log("sending response: ", sendingResponse);
             agent.add(`Awesome. your email noted as ${agent.parameters.email} We will be in touch soon.`);
 
-        }).catch(console.log);
+        }).catch(e => {
+            console.log("error: ", e);
+            agent.add("unable to send email postmark is under review");
+        });
     }
 
 
