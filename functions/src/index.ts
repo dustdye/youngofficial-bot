@@ -2,12 +2,10 @@ import { https } from 'firebase-functions';
 import { WebhookClient } from 'dialogflow-fulfillment';
 import { ServerClient } from "postmark";
 
-
 export const webhook = https.onRequest((request, response) => {
     const _agent = new WebhookClient({ request, response });
     console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
-
 
     function getEmail(agent: WebhookClient) {
         const serverToken = "92220d22-388d-4063-9053-924c4245bb83";
@@ -32,7 +30,6 @@ export const webhook = https.onRequest((request, response) => {
             agent.add("unable to send email postmark is under review");
         });
     }
-
 
     const intentMap = new Map();
     intentMap.set('GetEmail', getEmail);
