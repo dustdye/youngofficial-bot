@@ -1,0 +1,58 @@
+{
+  "id": "a2953a2e-2fc5-4657-8902-a7ac28e2e536",
+  "name": "smalltalk.reaction.skeptical [Starter Kit]",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "78f5f00c-e239-43b8-bc3c-222f62aecf52",
+          "required": false,
+          "dataType": "@payment-type",
+          "name": "Janis-payment-type",
+          "value": "$Janis-payment-type",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "d50eda24-abb8-478b-be5b-aec7149369a7",
+          "required": false,
+          "dataType": "@order-lead",
+          "name": "Janis-order-lead",
+          "value": "$Janis-order-lead",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": "You seem skeptical."
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

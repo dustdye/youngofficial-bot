@@ -1,0 +1,36 @@
+{
+  "id": "2ad54116-9ad8-4640-8d6b-fa63ebc20cfd",
+  "name": "Manychat Connection Test",
+  "auto": true,
+  "contexts": [
+    "Start-Verificiation"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "Dialogflow-Verification",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
+      "parameters": [],
+      "messages": [],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": [
+    {
+      "name": "connection_test"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "value": "Definitely",
+    "synonyms": [
+      "Definitely"
+    ]
+  },
+  {
+    "value": "For sure",
+    "synonyms": [
+      "For sure"
+    ]
+  },
+  {
+    "value": "OK",
+    "synonyms": [
+      "OK"
+    ]
+  },
+  {
+    "value": "Yes",
+    "synonyms": [
+      "Y",
+      "Yes"
+    ]
+  },
+  {
+    "value": "Yup",
+    "synonyms": [
+      "Yup"
+    ]
+  }
+]

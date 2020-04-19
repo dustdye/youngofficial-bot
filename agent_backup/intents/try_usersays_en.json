@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1ef053d9-b288-4a5b-98cd-0900cf7c673d",
+    "data": [
+      {
+        "text": "john@cisco.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d4929600-158f-4f41-89a2-1becb1785f9e",
+    "data": [
+      {
+        "text": "Nikola@ibm.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "eaeabc11-358a-4b3a-b009-01dec2b4a3d1",
+    "data": [
+      {
+        "text": "mk@aol.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "83233a96-e583-4739-a35c-2d5bcfc2ff82",
+    "data": [
+      {
+        "text": "My email is ",
+        "userDefined": false
+      },
+      {
+        "text": "mk@aol.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

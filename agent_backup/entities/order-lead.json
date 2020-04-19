@@ -1,0 +1,9 @@
+{
+  "id": "c5ebc81a-1651-4526-8c43-e55e969660f0",
+  "name": "order-lead",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

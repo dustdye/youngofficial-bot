@@ -1,0 +1,283 @@
+[
+  {
+    "id": "c1022f2c-851c-4042-8bdc-cfc5291439a4",
+    "data": [
+      {
+        "text": "is this a secure payment",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "955ea02f-3bae-4e10-a575-ed1f04e7481e",
+    "data": [
+      {
+        "text": "not too sure",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "76e10ad9-c425-4add-84b7-ff640bf5be76",
+    "data": [
+      {
+        "text": "not so sure about that",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "0c0e8eb4-0f62-4755-b459-caee2033d6d9",
+    "data": [
+      {
+        "text": "Is it safe to ",
+        "userDefined": false
+      },
+      {
+        "text": "pay",
+        "alias": "Janis-order-lead",
+        "meta": "@order-lead",
+        "userDefined": false
+      },
+      {
+        "text": " you",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "1bf5c289-fb9d-438f-9fb4-0fe6cc6fae60",
+    "data": [
+      {
+        "text": "not sure yet",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "53a1f1db-f18e-4128-9b7e-c5b808ad4b81",
+    "data": [
+      {
+        "text": "is it safe to use my ",
+        "userDefined": false
+      },
+      {
+        "text": "credit card",
+        "alias": "Janis-payment-type",
+        "meta": "@payment-type",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "487943e7-d131-46f6-a427-35d81c600b58",
+    "data": [
+      {
+        "text": "I don\u0027t really want to ",
+        "userDefined": false
+      },
+      {
+        "text": "pay",
+        "alias": "Janis-order-lead",
+        "meta": "@order-lead",
+        "userDefined": false
+      },
+      {
+        "text": " a ",
+        "userDefined": false
+      },
+      {
+        "text": "bot",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5e8f8851-2d83-40a6-8e95-d90043ab641e",
+    "data": [
+      {
+        "text": "I\u0027m hesitant about giving my ",
+        "userDefined": false
+      },
+      {
+        "text": "Visa",
+        "alias": "Janis-payment-type",
+        "meta": "@payment-type",
+        "userDefined": false
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "a bot",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "bc741ffa-14b3-4e09-a506-f1bc617c7d7f",
+    "data": [
+      {
+        "text": "not sure",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "969f7cf0-be0e-49d1-9f07-46cb46a0a371",
+    "data": [
+      {
+        "text": "I\u0027m not sure I should trust a ",
+        "userDefined": false
+      },
+      {
+        "text": "bot",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "50178007-2286-4082-9d8d-f299fe043903",
+    "data": [
+      {
+        "text": "I\u0027m not sure about paying a ",
+        "userDefined": false
+      },
+      {
+        "text": "bot",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "29b46f4a-e5e2-4e35-832f-b19533077bd6",
+    "data": [
+      {
+        "text": "I\u0027m not really sure",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d54d7cf8-2ae6-40a6-915b-64a58b18d878",
+    "data": [
+      {
+        "text": "is this secure",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "de75db55-a638-4270-86db-7e300921aee9",
+    "data": [
+      {
+        "text": "I\u0027m afraid to ",
+        "userDefined": false
+      },
+      {
+        "text": "pay",
+        "alias": "Janis-order-lead",
+        "meta": "@order-lead",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "here",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b96f8673-9be9-48ae-a1ed-63aa04c649ae",
+    "data": [
+      {
+        "text": "I\u0027m a little nervous to put in my ",
+        "userDefined": false
+      },
+      {
+        "text": "credit card",
+        "alias": "Janis-payment-type",
+        "meta": "@payment-type",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "aad0cf36-4bfb-48e0-8fdf-2c68e4724786",
+    "data": [
+      {
+        "text": "how secure is this",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "997b6232-6c66-4ddd-b1d2-c506eca360d6",
+    "data": [
+      {
+        "text": "are you sure",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

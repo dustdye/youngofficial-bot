@@ -1,0 +1,45 @@
+[
+  {
+    "value": "agent",
+    "synonyms": [
+      "agent",
+      "live agent"
+    ]
+  },
+  {
+    "value": "assistance",
+    "synonyms": [
+      "assistance"
+    ]
+  },
+  {
+    "value": "chat",
+    "synonyms": [
+      "chat",
+      "chat live",
+      "live chat",
+      "start chat"
+    ]
+  },
+  {
+    "value": "help",
+    "synonyms": [
+      "help"
+    ]
+  },
+  {
+    "value": "human",
+    "synonyms": [
+      "human"
+    ]
+  },
+  {
+    "value": "support",
+    "synonyms": [
+      "customer service",
+      "customer support",
+      "live support",
+      "support"
+    ]
+  }
+]

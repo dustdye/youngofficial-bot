@@ -1,0 +1,31 @@
+{
+  "id": "897238b7-b474-48bf-9146-0e970975642e",
+  "name": "I have a terrible arthritis help me",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": "Based on your question it is most likely this is what you are looking for, the Bone and Joint Pack: https://youngofficial.com/product/healthy-body-bone-joint-pak-2/  For more Information you can also see what Dr. Wallach has said on this topic: https://trustrule.com/searchable/wallach/?q\u003darthritis"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

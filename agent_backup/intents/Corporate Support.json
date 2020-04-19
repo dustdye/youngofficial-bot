@@ -1,0 +1,50 @@
+{
+  "id": "70d8d8f4-3dba-42de-9f71-44eb02d80d42",
+  "name": "Corporate Support",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "simple_response",
+          "platform": "google",
+          "lang": "en",
+          "condition": "",
+          "textToSpeech": "We are an Independent Distributor. All orders are fulfilled by corporate \u0026 arrive in 2-5 business days.\n\n You will need to contact Youngevity Corporate Directly Here...",
+          "ssml": "",
+          "displayText": ""
+        },
+        {
+          "type": "link_out_chip",
+          "platform": "google",
+          "lang": "en",
+          "condition": "",
+          "destinationName": "Youngevity Corporate",
+          "url": "https://shopdirect.youngevity.com/us_en/customer-care#contact-us/"
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

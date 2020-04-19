@@ -1,0 +1,31 @@
+{
+  "id": "b5cc79cf-7ac7-4985-affc-0732705fb7e7",
+  "name": "Hello! I want to lose weight",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": "The best suggestion for that would be the Weight Loss Pack: https://youngofficial.com/product/healthy-body-weight-loss-pack-2/ For more information about what Dr. Wallach says about Weight Loss Check here: https://trustrule.com/searchable/wallach/?q\u003dweight%20loss"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

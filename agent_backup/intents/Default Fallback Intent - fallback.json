@@ -1,0 +1,42 @@
+{
+  "id": "04677655-9627-45cf-b528-24a1faa4b817",
+  "parentId": "d47dc474-3cb7-4f7c-9443-82c50e187484",
+  "rootParentId": "d47dc474-3cb7-4f7c-9443-82c50e187484",
+  "name": "Default Fallback Intent - fallback",
+  "auto": false,
+  "contexts": [
+    "DefaultFallbackIntent-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DefaultFallbackIntent.DefaultFallbackIntent-fallback",
+      "affectedContexts": [
+        {
+          "name": "await_email",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": "I\u0027ll follow up with an answer for you ASAP.  What email shall I send the answer to?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

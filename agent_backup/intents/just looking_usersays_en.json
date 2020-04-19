@@ -1,0 +1,38 @@
+[
+  {
+    "id": "195ceb3e-4f4a-4142-9ca6-f82bb47ebf2b",
+    "data": [
+      {
+        "text": "just looking",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "51eeb1c5-b234-406e-b4b5-d77e4d442966",
+    "data": [
+      {
+        "text": "just browsing",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9afa9c9e-a5ea-4cd4-99a2-aa5511033ea4",
+    "data": [
+      {
+        "text": "just looking around",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

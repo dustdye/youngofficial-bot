@@ -1,0 +1,31 @@
+{
+  "id": "9bb2204c-0303-4f5e-82b6-4c4ab47e37c4",
+  "name": "Blood Sugar",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": "It sounds like you might be looking for the Blood Sugar Pack - You can find that here - https://youngofficial.com/product/healthy-body-blood-sugar-pak-2/   You may also be interested to hear what Dr. Wallach has to say about diabetes and more here - https://trustrule.com/searchable/wallach/?q\u003ddiabetes"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

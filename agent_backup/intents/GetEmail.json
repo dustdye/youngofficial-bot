@@ -1,0 +1,76 @@
+{
+  "id": "4278a354-0f60-462b-bed5-35557c4c2a68",
+  "name": "GetEmail",
+  "auto": true,
+  "contexts": [
+    "await_email"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "await_email",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "d0c0b716-536b-432d-b7d3-7d30a9c61ee2",
+          "required": true,
+          "dataType": "@sys.email",
+          "name": "email",
+          "value": "$email",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "please tell me your email, I will forward it to human support agent and he will get in touch with you as soon as possible"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "614c7c5e-db5f-4371-8aec-eef5f45820b3",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "question",
+          "value": "$question",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "please re-phrase your question so I will forward your question along with your email too"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": "We will in touch soon ! Thank you for visiting !"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

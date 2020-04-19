@@ -1,0 +1,158 @@
+[
+  {
+    "id": "d681799b-6f31-40f1-96c9-2da420298cee",
+    "data": [
+      {
+        "text": "I ordered and have not received anything",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "dae05673-a35b-447a-8b20-15e0e7e0b3cb",
+    "data": [
+      {
+        "text": "I would like to cancel my autoship",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8da1ab7b-94ac-4af9-84bd-29b1e3691884",
+    "data": [
+      {
+        "text": "how long until my order gets here?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "066679d3-5026-4ed0-b74f-950052e2aeef",
+    "data": [
+      {
+        "text": "track my package",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d8f038fa-20e6-492c-b3e7-6293dd8db8a8",
+    "data": [
+      {
+        "text": "track my order",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "86914232-0540-4ef9-9840-7b1031412de8",
+    "data": [
+      {
+        "text": "what is my tracking number?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "7f5fc51d-fb36-401b-a77e-fc82fac26a98",
+    "data": [
+      {
+        "text": "tracking",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f5185ab8-3a04-408a-9de9-52f491fdca0f",
+    "data": [
+      {
+        "text": "where is my order?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "287a00e1-4c07-4bfa-ab52-c56de1290482",
+    "data": [
+      {
+        "text": "return product",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d4b9d33f-1fea-4db9-a040-f8432c805fe4",
+    "data": [
+      {
+        "text": "I need to make a return",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "47a3fc45-2415-4053-b530-1ccdf25c1b73",
+    "data": [
+      {
+        "text": "I need to cancel my autoship",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8f3a97e4-3b6f-40f4-ba84-45fa80086e0f",
+    "data": [
+      {
+        "text": "fix autoship",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3874e0e1-78b7-4c4b-b135-d328479939b6",
+    "data": [
+      {
+        "text": "cancel autoship",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

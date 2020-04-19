@@ -1,0 +1,668 @@
+[
+  {
+    "id": "c8b7f4e1-b92c-4074-962d-fd830b5d5ac2",
+    "data": [
+      {
+        "text": "do you have the time?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2029f365-b0c5-4c3e-92a5-0c353f17af4c",
+    "data": [
+      {
+        "text": "Can I use ",
+        "userDefined": false
+      },
+      {
+        "text": "this",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " with my",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "dcd408a9-4e91-45c8-a9ed-3f9623bd4d9c",
+    "data": [
+      {
+        "text": "tell me the time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a97a8cbf-b6cf-42d8-b336-a4c900a946ba",
+    "data": [
+      {
+        "text": "will ",
+        "userDefined": false
+      },
+      {
+        "text": "this",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "work",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " with",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d21fbbb5-68f0-4d1e-a5e0-8fc10beeb087",
+    "data": [
+      {
+        "text": "I will test it",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "af865929-e59e-42fa-9245-8c6014c24591",
+    "data": [
+      {
+        "text": "What\u0027s the weather?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c975b74e-bfbe-468a-a889-bcfc46bebcfc",
+    "data": [
+      {
+        "text": "does ",
+        "userDefined": false
+      },
+      {
+        "text": "this",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "work",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " with",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8a7e524a-d1a9-47b7-81ea-3aa5fea18586",
+    "data": [
+      {
+        "text": "just testing ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4f3af827-4cc1-4e4c-a955-2ce4b8bcec8f",
+    "data": [
+      {
+        "text": "I want to test ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "742abe26-b994-4414-88fc-d4c01677bffe",
+    "data": [
+      {
+        "text": "do ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " want to eat",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "75b742bd-9295-4f06-a6d2-738af49d4d86",
+    "data": [
+      {
+        "text": "I\u0027ll test",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3941eef2-1086-4aef-b94e-fb276bdfaf84",
+    "data": [
+      {
+        "text": "Does this work?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "80b1728b-0048-4669-9e90-b2447befcb43",
+    "data": [
+      {
+        "text": "what time is it?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b303eaeb-4c43-4830-98d7-5a56c359cf49",
+    "data": [
+      {
+        "text": "What is the latest news?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "f42d2eaa-1d2d-47a4-8e79-9aef098431c0",
+    "data": [
+      {
+        "text": "what\u0027s the weather in ",
+        "userDefined": false
+      },
+      {
+        "text": "san fran",
+        "alias": "Janis-anything",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "34bf5347-d70c-4b9d-a832-6f966d6d8ab5",
+    "data": [
+      {
+        "text": "what\u0027s the weather down south?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a5b33e62-68d6-41f8-af41-6008baa93a3f",
+    "data": [
+      {
+        "text": "this is a test",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "bc9a0e1e-7e46-4b25-9c5a-604264f8f8f5",
+    "data": [
+      {
+        "text": "testing bot",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "0b6f2935-e681-45c0-8865-e3ac31547459",
+    "data": [
+      {
+        "text": "testing ",
+        "userDefined": false
+      },
+      {
+        "text": "123",
+        "alias": "Janis-anything",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a9a7b4cc-357b-4728-80b2-208f72dfc6a5",
+    "data": [
+      {
+        "text": "news for ",
+        "userDefined": false
+      },
+      {
+        "text": "Toronto",
+        "alias": "Janis-anything",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "1ec91492-c50c-44a2-a639-9363d95f920d",
+    "data": [
+      {
+        "text": "can ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " tell me the weather",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4d8ccca7-5ce3-4599-8200-5bc80cf7a6c9",
+    "data": [
+      {
+        "text": "test",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "10883870-92df-4729-b6cd-1f36b72297e5",
+    "data": [
+      {
+        "text": "I am testing ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b355b975-e576-466d-9280-dd0eed63136d",
+    "data": [
+      {
+        "text": "I need the time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c054fff6-b3fc-4dc5-a996-ee9a424d9ac5",
+    "data": [
+      {
+        "text": "Do ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " know the time?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c5508b83-e56f-422c-9767-97809315811d",
+    "data": [
+      {
+        "text": "Can you tell me the news?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "770c0d25-819b-4675-a2cb-80465c7bc0d0",
+    "data": [
+      {
+        "text": "do ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " know the weather",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5858a755-62f8-4f91-86e0-4be3d61d5294",
+    "data": [
+      {
+        "text": "what\u0027s the weather in ",
+        "userDefined": false
+      },
+      {
+        "text": "san francisco",
+        "alias": "Janis-anything",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2fd00128-6e71-4776-bb2c-3bceae54580d",
+    "data": [
+      {
+        "text": "can I test ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "90f0e53f-3b84-4a86-ad72-7270c962a4ab",
+    "data": [
+      {
+        "text": "testing",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "fdea98e6-6112-4de3-ba36-50b381e684ba",
+    "data": [
+      {
+        "text": "are ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " hungry",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e1b7192c-590b-4684-a2aa-39edcd58d946",
+    "data": [
+      {
+        "text": "would ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " like to eat?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "31b3d9d7-903c-4784-a4c4-a35f70af0f87",
+    "data": [
+      {
+        "text": "I will test ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e7aca1f5-4e9f-444b-b4a2-2df747a3082c",
+    "data": [
+      {
+        "text": "What is the weather in ",
+        "userDefined": false
+      },
+      {
+        "text": "Canada",
+        "alias": "Janis-anything",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "7f842ad3-e089-4ba3-9e0b-169b2aa50388",
+    "data": [
+      {
+        "text": "weather",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ec7ed6fa-0381-4913-aef6-e3cc37f7d5c2",
+    "data": [
+      {
+        "text": "I\u0027m going to test",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d88d07f3-ff84-444b-961d-3b1c114a1b30",
+    "data": [
+      {
+        "text": "let\u0027s test this",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "01c09e90-f6e5-43a0-94eb-1cbdf3d1f918",
+    "data": [
+      {
+        "text": "let me test ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c9ab0d3d-37e8-45b5-a2a5-63098a48cf32",
+    "data": [
+      {
+        "text": "what is the weather in ",
+        "userDefined": false
+      },
+      {
+        "text": "montreal",
+        "alias": "Janis-anything",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "1b27e75d-d5e8-475a-b5de-8cffa95cbe40",
+    "data": [
+      {
+        "text": "weather please",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "17075864-693d-44d1-9a84-d92db064e52f",
+    "data": [
+      {
+        "text": "What day is it?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

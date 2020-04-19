@@ -1,0 +1,83 @@
+[
+  {
+    "id": "cfaf7bbb-6157-4aaa-be81-b2c86618adee",
+    "data": [
+      {
+        "text": "Hi my name is Kerry been hearing great thing about your company help people like me with type ",
+        "userDefined": false
+      },
+      {
+        "text": "2",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " diabetes. I need help I have it under control and need to get rid of it.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "088d0a92-9b1a-492a-8626-029c1969f183",
+    "data": [
+      {
+        "text": "I have diabetes, what do you recommend?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ff54f702-f001-437a-8367-7b59c0bed33a",
+    "data": [
+      {
+        "text": "diabetes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "839dd945-df3c-4177-9bdc-3507b4438091",
+    "data": [
+      {
+        "text": "I have diabetes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "412c3b2a-1dd6-4d64-bb4f-54d6d1facea7",
+    "data": [
+      {
+        "text": "blood sugar problems",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5baaca9c-8bfa-4730-928e-53f0798580e2",
+    "data": [
+      {
+        "text": "I am diagnosed with type 2 diabetes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

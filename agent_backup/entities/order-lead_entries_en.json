@@ -1,0 +1,113 @@
+[
+  {
+    "value": "buy",
+    "synonyms": [
+      "buy",
+      "buying",
+      "buy it"
+    ]
+  },
+  {
+    "value": "receive",
+    "synonyms": [
+      "receive"
+    ]
+  },
+  {
+    "value": "find",
+    "synonyms": [
+      "access",
+      "browse",
+      "find",
+      "looking for",
+      "search"
+    ]
+  },
+  {
+    "value": "get",
+    "synonyms": [
+      "get",
+      "get it"
+    ]
+  },
+  {
+    "value": "have",
+    "synonyms": [
+      "have"
+    ]
+  },
+  {
+    "value": "offer",
+    "synonyms": [
+      "offer"
+    ]
+  },
+  {
+    "value": "order",
+    "synonyms": [
+      "make an order",
+      "order",
+      "ordering",
+      "place an order",
+      "start a new order",
+      "start an order"
+    ]
+  },
+  {
+    "value": "pay",
+    "synonyms": [
+      "pay",
+      "pay for",
+      "paying for"
+    ]
+  },
+  {
+    "value": "pick up",
+    "synonyms": [
+      "pick up",
+      "pickup up"
+    ]
+  },
+  {
+    "value": "procure",
+    "synonyms": [
+      "procure",
+      "procuring"
+    ]
+  },
+  {
+    "value": "provide",
+    "synonyms": [
+      "provide"
+    ]
+  },
+  {
+    "value": "purchase",
+    "synonyms": [
+      "purchase",
+      "purchasing"
+    ]
+  },
+  {
+    "value": "redeem",
+    "synonyms": [
+      "redeem",
+      "redeemeing"
+    ]
+  },
+  {
+    "value": "sell",
+    "synonyms": [
+      "sell"
+    ]
+  },
+  {
+    "value": "shop",
+    "synonyms": [
+      "shop",
+      "shop for",
+      "shopping",
+      "shopping for"
+    ]
+  }
+]

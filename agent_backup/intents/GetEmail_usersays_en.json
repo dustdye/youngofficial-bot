@@ -1,0 +1,80 @@
+[
+  {
+    "id": "b70db74e-74e6-490a-a97e-fa0394c34b1f",
+    "data": [
+      {
+        "text": "my question is  ",
+        "userDefined": false
+      },
+      {
+        "text": "I need help with deliveries",
+        "alias": "question",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a34a7682-5b88-4266-824e-e4106b2cf465",
+    "data": [
+      {
+        "text": "john@sicsco.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a325ae9b-b8ac-4095-a8c0-be2cf8c5e024",
+    "data": [
+      {
+        "text": "mk@aol.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "89f7e1f9-0bf1-4553-ba58-dc81152c27d4",
+    "data": [
+      {
+        "text": "my email is ",
+        "userDefined": false
+      },
+      {
+        "text": "sarah@yahoo.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9b5cf3f5-5b1b-4c98-9583-ebeb3b95bedc",
+    "data": [
+      {
+        "text": "joe@gmail.com",
+        "alias": "email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

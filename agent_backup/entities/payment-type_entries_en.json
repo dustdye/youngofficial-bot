@@ -1,0 +1,60 @@
+[
+  {
+    "value": "bitcoin",
+    "synonyms": [
+      "bitcoin"
+    ]
+  },
+  {
+    "value": "cash",
+    "synonyms": [
+      "cash"
+    ]
+  },
+  {
+    "value": "credit card",
+    "synonyms": [
+      "Amercian Express",
+      "Amex",
+      "CC",
+      "Discover",
+      "Mastercard",
+      "Visa",
+      "credit",
+      "card"
+    ]
+  },
+  {
+    "value": "debit card",
+    "synonyms": [
+      "debit",
+      "debit card",
+      "visa debit"
+    ]
+  },
+  {
+    "value": "gift card",
+    "synonyms": [
+      "gift card"
+    ]
+  },
+  {
+    "value": "paypal",
+    "synonyms": [
+      "paypal"
+    ]
+  },
+  {
+    "value": "wire transfer",
+    "synonyms": [
+      "western union",
+      "wire transfer"
+    ]
+  },
+  {
+    "value": "payment",
+    "synonyms": [
+      "payment"
+    ]
+  }
+]

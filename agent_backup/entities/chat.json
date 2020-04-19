@@ -1,0 +1,9 @@
+{
+  "id": "8d5e6fc1-4797-49eb-83fd-880f9a15fa2f",
+  "name": "chat",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}
