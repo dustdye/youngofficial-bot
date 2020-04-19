@@ -9,12 +9,16 @@ export const webhook = https.onRequest(async (request, response) => {
         console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
         console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
-        function getEmail(agent: WebhookClient) {
-            const serverToken = "0cb9fc14-bdcb-4616-9be7-fa501b6c39a9";
+
+        async function getEmail(agent: WebhookClient) {
+
+            console.log("GetEmail agent.parameters: ", agent.parameters);
+
+            const serverToken = "28733ad7-6334-445d-a62d-2fe47612608b";
             const client = new ServerClient(serverToken);
 
-            client.sendEmail({
-                "From": "contact@supportgrow.com",
+            await client.sendEmail({
+                "From": "info@sysborg.com",
                 "To": "gist-edcclxgk@inbound.gistmail1.com",
                 "Subject": "email Support request",
                 "TextBody": `Hey,
@@ -23,16 +27,17 @@ export const webhook = https.onRequest(async (request, response) => {
             
             thanks`
 
-            }).then((sendingResponse) => {
-                console.log("sending response: ", sendingResponse);
-                agent.add(`Awesome. your email noted as ${agent.parameters.email} We will be in touch soon.`);
-                return;
-
-            }).catch(e => {
-                console.log("error: ", e);
-                agent.add("unable to send email postmark is under review");
-                return;
-            });
+            })
+                .then((sendingResponse) => {
+                    console.log("sending response: ", sendingResponse);
+                    agent.add(`Awesome. your email noted as ${agent.parameters.email} We will be in touch soon.`);
+                    return;
+                })
+                .catch(e => {
+                    console.log("unable to send email.error: ", e);
+                    agent.add("unable to send email postmark is under review");
+                    return;
+                })
         }
 
         const intentMap = new Map();
