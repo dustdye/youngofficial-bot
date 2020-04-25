@@ -27,13 +27,14 @@ export const webhook = https.onRequest(async (request, response) => {
                 const client = new ServerClient(serverToken);
 
                 await client.sendEmail({
+                    "ReplyTo": agent.parameters.email,
                     "From": "info@sysborg.com",
                     "To": "gist-edcclxgk@inbound.gistmail1.com",
                     "Subject": "email Support request",
                     "TextBody": `Hey,
             I was trying to talk with chatbot on https://youngofficial.com/test-bot/ but I didn't get my problem solved
             My Email: ${agent.parameters.email}
-            My Question is "${agent.query}"
+            My Question: "${agent.query}"
             
             thanks`
 
@@ -51,8 +52,23 @@ export const webhook = https.onRequest(async (request, response) => {
             }
         }
 
+        function refTest(agent: WebhookClient) {
+
+            console.log("agent.contexts: ", agent.contexts);
+            console.log("agent.requestSource: ", agent.requestSource);
+            console.log("request.body: ", request.body);
+            console.log("request.body: ", JSON.stringify(request.body));
+            // console.log("agent.contexts.botcopy-ref-context: ", agent.contexts["botcopy-ref-context"]);
+
+            agent.add("I have received these in context: " + JSON.stringify(agent.contexts))
+            agent.add("everything I received in request is here: " + JSON.stringify(request.body))
+
+
+
+        }
         const intentMap = new Map();
         intentMap.set('GetEmail', getEmail);
+        intentMap.set('refTest', refTest);
 
         // tslint:disable-next-line: no-floating-promises
         _agent.handleRequest(intentMap);
@@ -60,4 +76,5 @@ export const webhook = https.onRequest(async (request, response) => {
         console.log("main error catch: ", e);
     }
 });
+
 
