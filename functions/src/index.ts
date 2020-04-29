@@ -79,29 +79,3 @@ export const webhook = https.onRequest(async (request, response) => {
 });
 
 
-
-
-
-const a = {
-    "responseId": "16c94138-135b-4241-83b7-7145de74ae25-eec93b43",
-    "queryResult": {
-        "queryText": "GOOGLE_ASSISTANT_WELCOME",
-        "action": "input.welcome",
-        "parameters": {},
-        "allRequiredParamsPresent": true,
-        "fulfillmentText": "Hi! Can I help you? 😁",
-        "fulfillmentMessages": [{ "text": { "text": ["Hi! Can I help you? 😁"] } }],
-        "outputContexts": [{
-            "name": "projects/ygy1-living/agent/sessions/887b5760-bd7b-0753-3173-46f0d417b979/contexts/visitorinteraction1",
-            "lifespanCount": 5
-        }],
-        "intent": {
-            "name": "projects/ygy1-living/agent/intents/185c0e7c-6f2c-461a-b723-af748d73712a",
-            "displayName": "Default Welcome Intent"
-        },
-        "intentDetectionConfidence": 1,
-        "languageCode": "en"
-    },
-    "originalDetectIntentRequest": { "payload": {} },
-    "session": "projects/ygy1-living/agent/sessions/887b5760-bd7b-0753-3173-46f0d417b979"
-}
