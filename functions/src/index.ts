@@ -1,7 +1,9 @@
 import { https } from 'firebase-functions';
-import { WebhookClient, Suggestion, Card } from 'dialogflow-fulfillment';
+import { WebhookClient } from 'dialogflow-fulfillment';
+import { Suggestions, BasicCard, Button, Image, LinkOutSuggestion } from 'actions-on-google'
+
 import { ServerClient } from "postmark";
-const axios = require('axios').default;
+import axios from 'axios';
 
 
 
@@ -11,10 +13,6 @@ export const webhook = https.onRequest(async (request, response) => {
         const _agent = new WebhookClient({ request, response });
         console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
         console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
-
-        function getSpreadsheetData() {
-            return axios.get('https://sheetdb.io/api/v1/jjabi12qzr5q4');
-        }
 
 
         // function getProductInfo(agent) {
@@ -28,29 +26,75 @@ export const webhook = https.onRequest(async (request, response) => {
         //     });
         // }
 
-        function getProductInfo(agent: WebhookClient) {
-            const productname = agent.parameters.name;
+        async function getProductInfo(agent: any) {
+            console.log("this is get product intent");
+            agent.requestSource = "ACTIONS_ON_GOOGLE";
+            const conv = agent.conv();
 
-            return getSpreadsheetData().then((res: any) => {
-                res.data.map((product: any) => {
-                    console.log("product: ", product);
 
-                    if (product.Name === productname) {
-                        agent.add(`Here are the details for ${product.Name}. Age: ${product.Age}, Email: ${product.Email}, Phone: ${product.Phone}`);
-                        agent.add(new Card({
-                            title: product.Name,
-                            imageUrl: product.ImageUrl,
-                            text: 'some text some text some text some text some text some text some text some text some text some text some text  😱',
-                            buttonText: product.ButtonText,
-                            buttonUrl: product.LearnMoreUrl
-                        })
+            const productName = agent.parameters.productName;
+            let data: any;
+
+            await axios.get('https://sheetdb.io/api/v1/jjabi12qzr5q4')
+                .then((res) => {
+                    console.log("data: ", res);
+                    console.log("data: ", res.data);
+                    data = res.data
+                })
+                .catch(e => {
+                    console.log("error in getting sheet data: ", e);
+                    agent.add("sorry I am currently unavailable, please try again later");
+                    return
+                })
+
+            if (!productName) {
+
+                conv.ask("which products would you like to know about");
+                conv.ask(new Suggestions(pluck(data).ProductTitle))
+                conv.ask(new Suggestions(pluck(data).ProductTitle))
+                conv.ask(new Suggestions(pluck(data).ProductTitle))
+                agent.add(conv);
+
+                return;
+
+            } else {
+
+                data.map((eachProduct: any) => {
+                    console.log("eachProduct: ", eachProduct);
+
+                    if (eachProduct.id === productName) {
+                        conv.ask(`Here are the details for ${eachProduct.Name}. Age: ${eachProduct.Age}, Email: ${eachProduct.Email}, Phone: ${eachProduct.Phone}`);
+
+                        conv.ask(
+                            new BasicCard({
+                                title: eachProduct.ProductTitle,
+                                subtitle: 'This is a subtitle',
+                                text: eachProduct.Content,
+                                image: new Image({
+                                    url: eachProduct.ImageURL,
+                                    alt: "Image of " + eachProduct.ProductTitle
+                                }),
+                                buttons: [
+                                    new Button({ title: eachProduct.ButtonText || "Learn More", url: eachProduct.Permalink }),
+                                    new Button({ title: 'Test Button 2', url: 'https://botcopy.com' })
+                                ],
+                            })
                         );
-                        agent.add(new Suggestion("how are you doing"));
-                        agent.add(new Suggestion("cancel"));
-                        agent.add(new Suggestion("help"));
+                        conv.ask(
+                            new LinkOutSuggestion({
+                                name: eachProduct.ButtonText || "Learn More",
+                                url: eachProduct.Permalink
+                            })
+                        );
+                        conv.ask(new Suggestions("Get other product info"));
+                        conv.ask(new Suggestions("Show details of " + pluck(data).ProductTitle))
+                        agent.add(conv);
+
+                        return;
                     }
                 });
-            });
+
+            }
         }
 
         function CaptureUserInfo(agent: WebhookClient) {
@@ -65,7 +109,9 @@ export const webhook = https.onRequest(async (request, response) => {
                 Email: email,
                 mobilephone: mobilephone
             }];
-            axios.post('https://sheet.best/api/sheets/36020baa-fccb-4667-af52-90759d44e976', data);
+            axios.post('https://sheet.best/api/sheets/36020baa-fccb-4667-af52-90759d44e976', data).catch(e => {
+                console.log("error in saving data: ", e)
+            })
         }
 
         async function getEmail(agent: WebhookClient) {
@@ -110,7 +156,7 @@ export const webhook = https.onRequest(async (request, response) => {
             }
         }
 
-        function refTest(agent: WebhookClient) {
+        function welcome(agent: any) {
 
             console.log("agent.contexts: ", agent.contexts);
             console.log("agent.requestSource: ", agent.requestSource);
@@ -120,8 +166,15 @@ export const webhook = https.onRequest(async (request, response) => {
 
             // agent.add("I have received these in context: " + JSON.stringify(agent.contexts))
             // agent.add("everything I received in request is here: " + JSON.stringify(request.body))
+            agent.requestSource = "ACTIONS_ON_GOOGLE";
+            const conv = agent.conv();
 
-            agent.add("Hi! Can I help you? 😁")
+            conv.ask("Hi! Can I help you? 😁")
+            conv.ask(new Suggestions("Show me products"))
+            conv.ask(new Suggestions("I want to get fit"))
+            conv.ask(new Suggestions("Do you have energy supplements"));
+            agent.add(conv)
+            return;
 
         }
 
@@ -133,7 +186,7 @@ export const webhook = https.onRequest(async (request, response) => {
 
         const intentMap = new Map();
         intentMap.set('GetEmail', getEmail);
-        intentMap.set('Default Welcome Intent', refTest);
+        intentMap.set('Default Welcome Intent', welcome);
         intentMap.set('getProductInfo', getProductInfo);
         intentMap.set('CaptureUserInfo', CaptureUserInfo);
         intentMap.set('Default Fallback Intent', fallback);
@@ -146,3 +199,10 @@ export const webhook = https.onRequest(async (request, response) => {
 });
 
 
+
+
+
+export function pluck(arr: any) {
+    const randIndex = Math.floor(Math.random() * arr.length);
+    return arr[randIndex];
+}
