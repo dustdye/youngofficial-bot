@@ -1,6 +1,9 @@
 import { https } from 'firebase-functions';
-import { WebhookClient } from 'dialogflow-fulfillment';
+import { WebhookClient, Suggestion, Card } from 'dialogflow-fulfillment';
 import { ServerClient } from "postmark";
+const axios = require('axios').default;
+
+
 
 export const webhook = https.onRequest(async (request, response) => {
     try {
@@ -9,6 +12,61 @@ export const webhook = https.onRequest(async (request, response) => {
         console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
         console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
+        function getSpreadsheetData() {
+            return axios.get('https://sheetdb.io/api/v1/jjabi12qzr5q4');
+        }
+
+
+        // function getProductInfo(agent) {
+        //     const name = agent.parameters.name;
+        //     return getSpreadsheetData().then(res => {
+        //         res.data.map(person => {
+        //             if (person.Name === name)
+        //                 agent.add(`Here are the details for ${name}. Age: ${person.Age}, Email: ${person.Email}, Phone: ${person.Phone}`);
+
+        //         });
+        //     });
+        // }
+
+        function getProductInfo(agent: WebhookClient) {
+            const productname = agent.parameters.name;
+
+            return getSpreadsheetData().then((res: any) => {
+                res.data.map((product: any) => {
+                    console.log("product: ", product);
+
+                    if (product.Name === productname) {
+                        agent.add(`Here are the details for ${product.Name}. Age: ${product.Age}, Email: ${product.Email}, Phone: ${product.Phone}`);
+                        agent.add(new Card({
+                            title: product.Name,
+                            imageUrl: product.ImageUrl,
+                            text: 'some text some text some text some text some text some text some text some text some text some text some text  😱',
+                            buttonText: product.ButtonText,
+                            buttonUrl: product.LearnMoreUrl
+                        })
+                        );
+                        agent.add(new Suggestion("how are you doing"));
+                        agent.add(new Suggestion("cancel"));
+                        agent.add(new Suggestion("help"));
+                    }
+                });
+            });
+        }
+
+        function CaptureUserInfo(agent: WebhookClient) {
+            console.log("agent.parameters: ", agent.parameters);
+            const {
+                firstname, lastname, email, mobilephone
+            } = agent.parameters;
+
+            const data = [{
+                firstname: firstname,
+                lastname: lastname,
+                Email: email,
+                mobilephone: mobilephone
+            }];
+            axios.post('https://sheet.best/api/sheets/36020baa-fccb-4667-af52-90759d44e976', data);
+        }
 
         async function getEmail(agent: WebhookClient) {
 
@@ -67,9 +125,18 @@ export const webhook = https.onRequest(async (request, response) => {
 
         }
 
+
+        function fallback(agent: WebhookClient) {
+            agent.add(`I didn't understand`);
+            agent.add(`I'm sorry, can you try again?`);
+        }
+
         const intentMap = new Map();
         intentMap.set('GetEmail', getEmail);
         intentMap.set('Default Welcome Intent', refTest);
+        intentMap.set('getProductInfo', getProductInfo);
+        intentMap.set('CaptureUserInfo', CaptureUserInfo);
+        intentMap.set('Default Fallback Intent', fallback);
 
         // tslint:disable-next-line: no-floating-promises
         _agent.handleRequest(intentMap);
