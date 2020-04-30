@@ -171,8 +171,8 @@ export const webhook = https.onRequest(async (request, response) => {
 
             conv.ask("Hi! Can I help you? 😁")
             conv.ask(new Suggestions("Show me products"))
-            conv.ask(new Suggestions("I want to get fit"))
-            conv.ask(new Suggestions("Do you have energy supplements"));
+            conv.ask(new Suggestions("Dr. Wallach Info"))
+            conv.ask(new Suggestions("90 Essentials"));
             agent.add(conv)
             return;
 
