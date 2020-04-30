@@ -5,8 +5,6 @@ import { Suggestions, BasicCard, Button, Image, LinkOutSuggestion } from 'action
 import { ServerClient } from "postmark";
 import axios from 'axios';
 
-
-
 export const webhook = https.onRequest(async (request, response) => {
     try {
 
@@ -25,6 +23,27 @@ export const webhook = https.onRequest(async (request, response) => {
         //         });
         //     });
         // }
+
+
+        async function wooTest(agent: WebhookClient) {
+
+            await axios.get("https://youngofficial.com/wp-json/wc/v3/products", {
+                headers: {
+                    'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                    'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                }
+            }).then(function (res) {
+                const products = res.data;
+
+                agent.add(`I have got ${products.length} products:\n`);
+
+                products.map((eachProduct: any) => {
+                    agent.add(`${eachProduct.id}: ${eachProduct.name}\n`);
+                })
+                return;
+            })
+        }
+
 
         async function getProductInfo(agent: any) {
             console.log("this is get product intent");
@@ -158,10 +177,10 @@ export const webhook = https.onRequest(async (request, response) => {
 
         function welcome(agent: any) {
 
-            console.log("agent.contexts: ", agent.contexts);
-            console.log("agent.requestSource: ", agent.requestSource);
-            console.log("request.body: ", request.body);
-            console.log("request.body: ", JSON.stringify(request.body));
+            // console.log("agent.contexts: ", agent.contexts);
+            // console.log("agent.requestSource: ", agent.requestSource);
+            // console.log("request.body: ", request.body);
+            // console.log("request.body: ", JSON.stringify(request.body));
             // console.log("agent.contexts.botcopy-ref-context: ", agent.contexts["botcopy-ref-context"]);
 
             // agent.add("I have received these in context: " + JSON.stringify(agent.contexts))
@@ -190,6 +209,8 @@ export const webhook = https.onRequest(async (request, response) => {
         intentMap.set('getProductInfo', getProductInfo);
         intentMap.set('CaptureUserInfo', CaptureUserInfo);
         intentMap.set('Default Fallback Intent', fallback);
+
+        intentMap.set('wooTestDeleteThis', wooTest);
 
         // tslint:disable-next-line: no-floating-promises
         _agent.handleRequest(intentMap);
