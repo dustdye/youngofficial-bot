@@ -63,20 +63,20 @@ export const webhook = https.onRequest(async (request, response) => {
                     console.log("eachProduct: ", eachProduct);
 
                     if (eachProduct.id === productName) {
-                        conv.ask(`Here are the details for ${eachProduct.Name}. Age: ${eachProduct.Age}, Email: ${eachProduct.Email}, Phone: ${eachProduct.Phone}`);
+                        conv.ask(`This might be what you are looking for. Here are the details for ${eachProduct.ProductTitle}.`);
 
                         conv.ask(
                             new BasicCard({
                                 title: eachProduct.ProductTitle,
-                                subtitle: 'This is a subtitle',
-                                text: eachProduct.Content,
+                               // subtitle: 'This is a subtitle',
+                                text: eachProduct.ShortDescription,
                                 image: new Image({
                                     url: eachProduct.ImageURL,
                                     alt: "Image of " + eachProduct.ProductTitle
                                 }),
                                 buttons: [
                                     new Button({ title: eachProduct.ButtonText || "Learn More", url: eachProduct.Permalink }),
-                                    new Button({ title: 'Test Button 2', url: 'https://botcopy.com' })
+                                    //new Button({ title: 'Test Button 2', url: 'https://botcopy.com' })
                                 ],
                             })
                         );
