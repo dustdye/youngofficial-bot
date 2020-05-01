@@ -27,21 +27,31 @@ export const webhook = https.onRequest(async (request, response) => {
 
         async function wooTest(agent: WebhookClient) {
 
-            await axios.get("https://youngofficial.com/wp-json/wc/v3/products", {
-                headers: {
-                    'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
-                    'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
-                }
-            }).then(function (res) {
-                const products = res.data;
-
-                agent.add(`I have got ${products.length} products:\n`);
-
-                products.map((eachProduct: any) => {
-                    agent.add(`${eachProduct.id}: ${eachProduct.name}\n`);
+            await Promise.all([
+                axios.get("https://youngofficial.com/wp-json/wc/v3/products?per_page=100&page=1", {
+                    headers: {
+                        'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                        'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                    }
+                }),
+                axios.get("https://youngofficial.com/wp-json/wc/v3/products?per_page=100&page=2", {
+                    headers: {
+                        'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                        'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                    }
                 })
-                return;
-            })
+            ])
+
+                .then(function (res) {
+                    const products = [].concat(res[0].data, res[1].data);
+
+                    agent.add(`I have got ${products.length} products:\n`);
+
+                    products.map((eachProduct: any) => {
+                        agent.add(`${eachProduct.id}: ${eachProduct.name}\n`);
+                    })
+                    return;
+                }).catch(console.log)
         }
 
 
@@ -51,69 +61,99 @@ export const webhook = https.onRequest(async (request, response) => {
             const conv = agent.conv();
 
 
-            const productName = agent.parameters.productName;
-            let data: any;
+            const productName = parseInt(agent.parameters.productName);
+            let products: any[];
 
-            await axios.get('https://sheetdb.io/api/v1/jjabi12qzr5q4')
-                .then((res) => {
-                    console.log("data: ", res);
-                    console.log("data: ", res.data);
-                    data = res.data
+            // // getting data from sheet
+            // await axios.get('https://sheetdb.io/api/v1/jjabi12qzr5q4')
+            //     .then((res) => {
+            //         console.log("data: ", res);
+            //         console.log("data: ", res.data);
+            //         data = res.data
+            //     })
+            //     .catch(e => {
+            //         console.log("error in getting sheet data: ", e);
+            //         agent.add("sorry I am currently unavailable, please try again later");
+            //         return
+            //     })
+
+            // getting data from woocommerece 
+            await Promise.all([
+                axios.get("https://youngofficial.com/wp-json/wc/v3/products?per_page=100&page=1", {
+                    headers: {
+                        'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                        'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                    }
+                }),
+                axios.get("https://youngofficial.com/wp-json/wc/v3/products?per_page=100&page=2", {
+                    headers: {
+                        'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                        'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                    }
                 })
-                .catch(e => {
-                    console.log("error in getting sheet data: ", e);
-                    agent.add("sorry I am currently unavailable, please try again later");
-                    return
-                })
+            ])
+                .then(function (res) {
+                    products = [].concat(res[0].data, res[1].data);
 
-            if (!productName) {
+                    console.log("received product count: ", products.length);
+                    console.log("first product name: ", products[0].name);
 
-                conv.ask("which products would you like to know about");
-                conv.ask(new Suggestions(pluck(data).ProductTitle))
-                conv.ask(new Suggestions(pluck(data).ProductTitle))
-                conv.ask(new Suggestions(pluck(data).ProductTitle))
-                agent.add(conv);
+                    if (!productName) {
 
-                return;
-
-            } else {
-
-                data.map((eachProduct: any) => {
-                    console.log("eachProduct: ", eachProduct);
-
-                    if (eachProduct.id === productName) {
-                        conv.ask(`This might be what you are looking for. Here are the details for ${eachProduct.ProductTitle}.`);
-
-                        conv.ask(
-                            new BasicCard({
-                                title: eachProduct.ProductTitle,
-                               // subtitle: 'This is a subtitle',
-                                text: eachProduct.ShortDescription,
-                                image: new Image({
-                                    url: eachProduct.ImageURL,
-                                    alt: "Image of " + eachProduct.ProductTitle
-                                }),
-                                buttons: [
-                                    new Button({ title: eachProduct.ButtonText || "Learn More", url: eachProduct.Permalink }),
-                                    //new Button({ title: 'Test Button 2', url: 'https://botcopy.com' })
-                                ],
-                            })
-                        );
-                        conv.ask(
-                            new LinkOutSuggestion({
-                                name: eachProduct.ButtonText || "Learn More",
-                                url: eachProduct.Permalink
-                            })
-                        );
-                        conv.ask(new Suggestions("Get other product info"));
-                        conv.ask(new Suggestions("Show details of " + pluck(data).ProductTitle))
+                        conv.ask("which products would you like to know about");
+                        conv.ask(new Suggestions(pluck(products).name))
+                        conv.ask(new Suggestions(pluck(products).name))
+                        conv.ask(new Suggestions(pluck(products).name))
                         agent.add(conv);
 
                         return;
-                    }
-                });
 
-            }
+                    } else {
+
+                        console.log("user said product number: ", productName);
+
+                        products.map((eachProduct: any) => {
+                            // console.log("eachProduct: ", eachProduct);
+
+                            if (parseInt(eachProduct.id) === productName) {
+                                conv.ask(`This might be what you are looking for. Here are the details for ${eachProduct.name}.`);
+
+                                conv.ask(
+                                    new BasicCard({
+                                        title: eachProduct.name,
+                                        // subtitle: 'This is a subtitle',
+                                        text: eachProduct.short_description,
+                                        image: new Image({
+                                            url: eachProduct.images[0].src,
+                                            alt: "Image of " + eachProduct.name
+                                        }),
+                                        buttons: [
+                                            new Button({ title: "Learn More", url: eachProduct.permalink }),
+                                            //new Button({ title: 'Test Button 2', url: 'https://botcopy.com' })
+                                        ],
+                                    })
+                                );
+                                conv.ask(
+                                    new LinkOutSuggestion({
+                                        name: eachProduct.ButtonText || "Learn More",
+                                        url: eachProduct.permalink
+                                    })
+                                );
+                                conv.ask(new Suggestions("Get other product info"));
+                                conv.ask(new Suggestions("Show details of " + pluck(products).name))
+                                agent.add(conv);
+
+                                return;
+                            }
+                        });
+
+                    }
+
+                }).catch(e => {
+                    console.log("error in getting data from woocommerece api: ", e);
+                    agent.add("sorry I am currently unavailable, please try again later");
+                    return
+                })
         }
 
         function CaptureUserInfo(agent: WebhookClient) {
