@@ -1,9 +1,16 @@
 import { https } from 'firebase-functions';
 import { WebhookClient } from 'dialogflow-fulfillment';
-import { Suggestions, BasicCard, Button, Image, LinkOutSuggestion } from 'actions-on-google'
+import { Suggestions, BasicCard, Button, Image, LinkOutSuggestion, BrowseCarousel, BrowseCarouselItem } from 'actions-on-google'
 
 import { ServerClient } from "postmark";
 import axios from 'axios';
+import { init, agent as agentHelper, entityEntryInterface, entityv1, userEntityv2, } from 'dialogflow-helper'
+
+init({
+    "client_email": "dialogflow-ftjyeh@ygy1-living.iam.gserviceaccount.com",
+    "project_id": "ygy1-living",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCyHXdiwXeKfw0I\nYd4IRhS0kJTanH5N9mtklJWqgXG6PoZcQ0FJYW07SHUlGaUSSGJVhYx1hkjBFD8j\n43NWvcJy32ByKEPy0wVwXHzGzJn7v3KNR9qIeXgjcZH6tZN194S2Ht7haTi22wDQ\nJzlN/bucSPhfaeyEP2jnOPh01Csu4HZGzN4be9moUdhY9VCLv9PKKgyaxO6NXtb/\nZhhqxaBbNMFGkJqvm4jf8Wz++4e5lRsJETFNzlQlRtbrCN8PRy11UPhB8SS+rFtL\nS/V3gXDajEHd9dnX7uaGSXAAnCQgZ8ZjPN4OaqsN1XC511SV7fAQkJK5w8DVYkxe\nVvUKv32TAgMBAAECggEACUnYwvv8hEAclDZTrNzIEaPZ5Lif1uhQhhNAPCm585DK\nfZ89lVpmUYl1dR+Bkz2BG0f2oN5a3EQhCCRsDGGi9U30Kp/c7e8r68XMSqsQJf0V\njTaVDTmVwUttOxoi/CuR7n7CTWuo+ygv7QBOpbmOAhgavmcOCtYqXfyDlcbGuw//\n6k8sKlNKNEY7dnkUxRmQPCBu35zARhyI+vnqY8oEe/vmXtDyhPn5GEQqWMch8yKo\nLq3Td9jFZ7G8V2wSotzwVSTs1uH/rGGmKd9E+EzDsGbhUMC9YjvsFQooF+qLy4/J\nqRqyykjkHarYRt/NpwgJS6A+DF1A3SrUVFXkfOBBeQKBgQDjWNKcD976wmvveCVs\n6AdQiNKLsBW7xAlqGbhHj8ov/+m4O7jqB5im8uV5pEY9xO4GU8/blkSxLsw6+Uno\nY6ABqUgR9QEfvAYnlOOxrEsNrP0XPPtlpoNrdY+bPkXe2mwjejBwQ5FIvpYvNGYL\ncs0obCF7hSows5pNpBw2Hf9TbwKBgQDIkDcLk8F8B/8/SmMiUkYuySTxWHkgJTs6\nDGM7qrzl1RWtLiYdhhemm7r7f4zpG8hQm1ZlpXFS1GL8iOxG0tXMFliZgy5MfbgD\nda6WXwtxWPYhyuVe0neqof+h6w/03gvS+3+KaEXw78VwlSQ+dpIJW/XrPaQIWQi5\nwK383RCWHQKBgHXfaJrnk6mZwhKPzX+wsZIszlUEf9AxbNwo56WaxK6sVcZimJYm\nSBxPFXFDHfQKtYpsS/nC6GyhIdx1wb8OYDhcR3Sf/ewxNVOyW3eUJ/m4NiSlRobG\nlZ7Sfhl0aQ+JWcXvJUwfjCUWQ5HH7hyDciFCJv3+5ggIJrmYm9PnK6lbAoGBAI6J\nb5VavPdY954TT8Dkl9xIN2kOZ4bg7uaiRyPwg68TcQRS9+OjmMtfgdObIpnIlOQ0\ngYJbwd4L8w1mggUTcb5JY042XIEgF9bdm+ZiRc+YWdRKThjFmyY5W2PHmt97rwuS\nkWHcGVjSDo+kbs21lrPwFyXH+Pu1yu24ce5zbYZBAoGAMM5XAGGT9fVHoo7rnCOu\nQu84qI6j6EFgQkNhmSglvvycPP2OFy+TIDBKDUEmF1SSpy77OmtnQNI7FvzdIddH\nETAQS1Ce0EA0BoIbtDhDC0BRqNa/xA/BNrics1ULmTODAL0OrSEBacTSR9UrvW16\nEJR4YIZbTXt5fFFMmgwjwfA=\n-----END PRIVATE KEY-----\n",
+})
 
 export const webhook = https.onRequest(async (request, response) => {
     try {
@@ -23,6 +30,102 @@ export const webhook = https.onRequest(async (request, response) => {
         //         });
         //     });
         // }
+
+
+        async function productForHealthProblem(agent: WebhookClient) {
+
+            console.log("this is get product intent");
+            (agent.requestSource as any) = "ACTIONS_ON_GOOGLE";
+            const conv = agent.conv();
+
+            const HealthProblem = agent.parameters.HealthProblem;
+            let products: any[];
+            const items: BrowseCarouselItem[] = [];
+
+            if (!HealthProblem) {
+                conv.ask("What is your health problem");
+
+                await agentHelper.getEntity("1df80e75-dec1-4499-85b3-69b254058fd1").then((entity: any) => {
+                    console.log("received entity: ", entity.name);
+                    const entities: entityEntryInterface[] = entity.entities;
+
+                    conv.ask(new Suggestions(
+                        pluck(entities).synonyms[0],
+                        pluck(entities).synonyms[0],
+                        pluck(entities).synonyms[0],
+                    ))
+                    agent.add(conv);
+                    return;
+                })
+            } else {
+
+                await Promise.all([
+                    axios.get("https://youngofficial.com/wp-json/wc/v3/products?per_page=100&page=1", {
+                        headers: {
+                            'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                            'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                        }
+                    }),
+                    axios.get("https://youngofficial.com/wp-json/wc/v3/products?per_page=100&page=2", {
+                        headers: {
+                            'Authorization': 'Basic Y2tfOTdkNGZmZTJhMmEwNTFhNTBiNmQyY2ZmNWQzOTA2ZDE5MGU3ZjhiODpjc185ZTA2Yjg2YzIxYzJmOTA4YjQ2NTI2NjA2NDUxYTNiOTlhMzQ3ODc1',
+                            'Cookie': 'guest_user=d3d1d697d983ff5d905ddcd3d9bac3e5'
+                        }
+                    })
+                ])
+                    .then(function (res) {
+                        products = [].concat(res[0].data, res[1].data);
+
+                        console.log("received product count: ", products.length);
+                        console.log("first product name: ", products[0].name);
+
+
+                        console.log("user said Health problem: ", HealthProblem);
+
+                        // short listing products
+                        products.map((eachProduct: any) => {
+                            // console.log("eachProduct: ", eachProduct);
+                            eachProduct.attributes.map((eachAttribute: { name: string, options: string[] }) => {
+                                if (eachAttribute.name === "usedfor" && eachAttribute.options.indexOf(HealthProblem) > -1) {
+
+                                    items.push(new BrowseCarouselItem({
+                                        title: eachProduct.name,
+                                        url: eachProduct.permalink,
+                                        // subtitle: 'This is a subtitle',
+                                        description: eachProduct.short_description,
+                                        image: new Image({
+                                            url: eachProduct.images[0].src,
+                                            alt: "Image of " + eachProduct.name
+                                        }),
+                                        footer: "This is footer"
+                                    }))
+                                }
+                            })
+                        });
+
+                        if (items.length) {
+
+                            conv.ask(`Here are some products useful in ${HealthProblem}`);
+
+                            conv.ask(new BrowseCarousel({ items: items }))
+                            conv.ask(new Suggestions(`I have got a different health problem`))
+                            agent.add(conv)
+                            return;
+
+                        } else {
+                            agent.add("No product found for " + HealthProblem);
+                            return;
+                        }
+
+                    }).catch(e => {
+                        console.log("error in getting data from woocommerece api: ", e);
+                        agent.add("sorry I am currently unavailable, please try again later");
+                        return
+                    })
+
+            }
+
+        }
 
 
         async function wooTest(agent: WebhookClient) {
@@ -55,9 +158,9 @@ export const webhook = https.onRequest(async (request, response) => {
         }
 
 
-        async function getProductInfo(agent: any) {
+        async function getProductInfo(agent: WebhookClient) {
             console.log("this is get product intent");
-            agent.requestSource = "ACTIONS_ON_GOOGLE";
+            (agent.requestSource as any) = "ACTIONS_ON_GOOGLE";
             const conv = agent.conv();
 
 
@@ -244,12 +347,14 @@ export const webhook = https.onRequest(async (request, response) => {
         }
 
         const intentMap = new Map();
-        intentMap.set('GetEmail', getEmail);
         intentMap.set('Default Welcome Intent', welcome);
-        intentMap.set('getProductInfo', getProductInfo);
-        intentMap.set('CaptureUserInfo', CaptureUserInfo);
         intentMap.set('Default Fallback Intent', fallback);
 
+        intentMap.set('GetEmail', getEmail);
+        intentMap.set('getProductInfo', getProductInfo);
+        intentMap.set('productForHealthProblem', productForHealthProblem);
+
+        intentMap.set('CaptureUserInfo', CaptureUserInfo);
         intentMap.set('wooTestDeleteThis', wooTest);
 
         // tslint:disable-next-line: no-floating-promises
@@ -263,7 +368,7 @@ export const webhook = https.onRequest(async (request, response) => {
 
 
 
-export function pluck(arr: any) {
+export function pluck<T>(arr: Array<T>): T {
     const randIndex = Math.floor(Math.random() * arr.length);
     return arr[randIndex];
 }
