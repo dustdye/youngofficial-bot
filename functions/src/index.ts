@@ -4,7 +4,7 @@ import { Suggestions, BasicCard, Button, Image, LinkOutSuggestion, BrowseCarouse
 
 import { ServerClient } from "postmark";
 import axios from 'axios';
-import { init, agent as agentHelper, entityEntryInterface, entityv1, userEntityv2, } from 'dialogflow-helper'
+import { init, agent as agentHelper, entityEntryInterface } from 'dialogflow-helper';
 
 init({
     "client_email": "dialogflow-ftjyeh@ygy1-living.iam.gserviceaccount.com",
@@ -45,7 +45,7 @@ export const webhook = https.onRequest(async (request, response) => {
             if (!HealthProblem) {
                 conv.ask("What is your health problem");
 
-                await agentHelper.getEntity("1df80e75-dec1-4499-85b3-69b254058fd1").then((entity: any) => {
+                await agentHelper.getEntity("fc689e87-a9fc-4749-8d81-ee1dff6583c8").then((entity: any) => {
                     console.log("received entity: ", entity.name);
                     const entities: entityEntryInterface[] = entity.entities;
 
@@ -56,6 +56,9 @@ export const webhook = https.onRequest(async (request, response) => {
                     ))
                     agent.add(conv);
                     return;
+                }).catch(e => {
+                    console.log("error in getting entity: ", e);
+                    agent.add(conv);
                 })
             } else {
 
