@@ -34,7 +34,7 @@ export const webhook = https.onRequest(async (request, response) => {
 
         async function productForHealthProblem(agent: WebhookClient) {
 
-            console.log("this is get product intent");
+            console.log("this is get productForHealthProblem intent");
             (agent.requestSource as any) = "ACTIONS_ON_GOOGLE";
             const conv = agent.conv();
 
