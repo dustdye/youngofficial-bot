@@ -89,7 +89,8 @@ export const webhook = https.onRequest(async (request, response) => {
                         products.map((eachProduct: any) => {
                             // console.log("eachProduct: ", eachProduct);
                             eachProduct.attributes.map((eachAttribute: { name: string, options: string[] }) => {
-                                if (eachAttribute.name === "usedfor" && eachAttribute.options.indexOf(HealthProblem) > -1) {
+                                if (eachAttribute.name === "usedfor"
+                                    && eachAttribute.options.some(x => x.toLowerCase() === HealthProblem.toLowerCase())) {
 
                                     items.push(new BrowseCarouselItem({
                                         title: eachProduct.name,
@@ -100,7 +101,7 @@ export const webhook = https.onRequest(async (request, response) => {
                                             url: eachProduct.images[0].src,
                                             alt: "Image of " + eachProduct.name
                                         }),
-                                        footer: "This is footer"
+                                        // footer: "This is footer"
                                     }))
                                 }
                             })
@@ -108,7 +109,7 @@ export const webhook = https.onRequest(async (request, response) => {
 
                         if (items.length) {
 
-                            conv.ask(`Here are some products useful in ${HealthProblem}`);
+                            conv.ask(`You might be looking for these products: `);
 
                             conv.ask(new BrowseCarousel({ items: items }))
                             conv.ask(new Suggestions(`I have got a different health problem`))
@@ -116,7 +117,23 @@ export const webhook = https.onRequest(async (request, response) => {
                             return;
 
                         } else {
-                            agent.add("No product found for " + HealthProblem);
+                            conv.ask("Learn What Wallach Says about " + HealthProblem + " (3rd Party Site)");
+                            conv.ask(
+                                new BasicCard({
+                                    buttons: [
+                                        new Button({ title: `Wallach on ${HealthProblem} (3rd Party Site)`, url: 'https://app.searchie.io/widget/yJe1BjV1ak#/search/' + HealthProblem })
+                                    ],
+                                    title: 'Search Wallach Database',
+                                    image: new Image({
+                                        url:
+                                            'https://youngofficial.com/wp-content/uploads/2019/06/DrWallach-circle.jpg',
+                                        alt: 'photo of doctor wallach'
+                                    }),
+                                    // subtitle: 'Test subtitle',
+                                    // text: 'Test text'
+                                })
+                            );
+                            agent.add(conv);
                             return;
                         }
 
