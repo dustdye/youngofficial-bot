@@ -258,7 +258,7 @@ export const webhook = https.onRequest(async (request, response) => {
                                 );
                                 conv.ask(
                                     new LinkOutSuggestion({
-                                        name: eachProduct.ButtonText || "Learn More",
+                                        name: eachProduct.ButtonText || "Learn More (new tab)",
                                         url: eachProduct.permalink
                                     })
                                 );
