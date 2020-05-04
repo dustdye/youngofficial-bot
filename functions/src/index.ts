@@ -112,7 +112,7 @@ export const webhook = https.onRequest(async (request, response) => {
                             conv.ask(`You might be looking for these products: `);
 
                             conv.ask(new BrowseCarousel({ items: items }))
-                            conv.ask(new Suggestions(`I have got a different health problem`))
+                            // conv.ask(new Suggestions(`I have got a different health problem`))
                             agent.add(conv)
                             return;
 
@@ -126,7 +126,7 @@ export const webhook = https.onRequest(async (request, response) => {
                                     title: 'Search Wallach Database',
                                     image: new Image({
                                         url:
-                                            'https://youngofficial.com/wp-content/uploads/2019/06/DrWallach-circle.jpg',
+                                            'https://youngofficial.com/wp-content/uploads/2019/06/DrWallach-circle.png',
                                         alt: 'photo of doctor wallach'
                                     }),
                                     // subtitle: 'Test subtitle',
@@ -262,9 +262,9 @@ export const webhook = https.onRequest(async (request, response) => {
                                         url: eachProduct.permalink
                                     })
                                 );
-                                conv.ask(new Suggestions("Get other product info"));
-                                conv.ask(new Suggestions("Show details of " + pluck(products).name))
-                                agent.add(conv);
+                                // conv.ask(new Suggestions("Get other product info"));
+                                // conv.ask(new Suggestions("Show details of " + pluck(products).name))
+                                // agent.add(conv);
 
                                 return;
                             }
